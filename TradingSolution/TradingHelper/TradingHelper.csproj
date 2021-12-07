@@ -117,5 +117,11 @@
     </PackageReference>
     <PackageReference Include="Prism.Unity" Version="8.0.0.1909" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{15e9bc13-3a5f-4f46-a54d-3a3965a2d9b2}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
