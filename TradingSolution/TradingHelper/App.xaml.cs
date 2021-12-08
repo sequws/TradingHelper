@@ -22,7 +22,7 @@ namespace TradingHelper
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            //containerRegistry.RegisterForNavigation<DemoView1>("Demo1View"); register in MainWindow with region
+            containerRegistry.RegisterForNavigation<DemoView1>("Demo1View"); // register in MainWindow with region
 
         }
 
@@ -32,6 +32,11 @@ namespace TradingHelper
 
             // Set the application theme to Dark.Green
             //ThemeManager.Current.ChangeTheme(this, "Dark.Green");
+        }
+
+        protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
+        {
+            moduleCatalog.AddModule<StatementModule.StatementModuleModule>();
         }
     }
 }
