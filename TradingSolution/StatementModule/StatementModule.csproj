@@ -49,9 +49,11 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Modules\StatementInfo.cs" />
-    <Compile Include="Modules\StatementSummary.cs" />
-    <Compile Include="Modules\Transaction.cs" />
+    <Compile Include="DataAccess\StatementLoader.cs" />
+    <Compile Include="Models\StatementFile.cs" />
+    <Compile Include="Models\StatementInfo.cs" />
+    <Compile Include="Models\StatementSummary.cs" />
+    <Compile Include="Models\Transaction.cs" />
     <Compile Include="StatementModuleModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
