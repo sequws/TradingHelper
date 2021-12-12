@@ -12,7 +12,7 @@ namespace StatementModule.DataAccess
 {
     public class StatementLoader : Loader, ILoader<StatementFile>
     {
-        public StatementLoader() : base("statements")
+        public StatementLoader() : base("statements", "*.htm")
         {
 
         }

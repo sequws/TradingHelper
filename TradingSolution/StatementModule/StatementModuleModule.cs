@@ -2,6 +2,9 @@
 using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Regions;
+using Core.Interfaces;
+using StatementModule.Models;
+using StatementModule.DataAccess;
 
 namespace StatementModule
 {
@@ -15,7 +18,7 @@ namespace StatementModule
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            
+            containerRegistry.RegisterInstance<ILoader<StatementFile>>(new StatementLoader());
         }
     }
 }
