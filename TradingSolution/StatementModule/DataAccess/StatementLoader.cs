@@ -35,9 +35,11 @@ namespace StatementModule.DataAccess
 
             foreach (var file in GetFiles())
             {
-                var name = GetNameFromPath(file);
-                var dataLines = File.ReadAllLines(file);
-                res.Add(new StatementFile { FileName = file, Lines = dataLines.ToList(), Name = name });
+                res.Add(new StatementFile { 
+                    FileName = file, 
+                    Text = File.ReadAllText(file), 
+                    Name = GetNameFromPath(file) 
+                });
             }
 
             return res;

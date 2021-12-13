@@ -10,6 +10,6 @@ namespace StatementModule.Models
     {
         public string Name { get; set; }
         public string FileName { get; set; }
-        public List<string> Lines { get; set; } = new List<string>();
+        public string Text { get; set; }
     }
 }

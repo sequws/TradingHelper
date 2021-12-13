@@ -18,7 +18,7 @@ namespace StatementModule
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.RegisterInstance<ILoader<StatementFile>>(new StatementLoader());
+            containerRegistry.RegisterSingleton<ILoader<StatementFile>, StatementLoader>();
         }
     }
 }
