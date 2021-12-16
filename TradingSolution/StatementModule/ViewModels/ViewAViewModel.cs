@@ -26,7 +26,7 @@ namespace StatementModule.ViewModels
             Message = "View A from Module";
             _statementLoader = statementLoader;
 
-            _statementLoader.LoadData();
+            var files =_statementLoader.LoadData();
         }
     }
 }
