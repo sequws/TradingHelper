@@ -5,6 +5,8 @@ using Prism.Regions;
 using Core.Interfaces;
 using StatementModule.Models;
 using StatementModule.DataAccess;
+using StatementModule.Sevices;
+using StatementModule.Interfaces;
 
 namespace StatementModule
 {
@@ -19,6 +21,8 @@ namespace StatementModule
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterSingleton<ILoader<StatementFile>, StatementLoader>();
+            containerRegistry.RegisterSingleton<IParser<Statement>, StatementMt4Parser>();
+            containerRegistry.RegisterSingleton<IStatementService, StatementService>();
         }
     }
 }

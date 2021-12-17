@@ -51,12 +51,14 @@
   <ItemGroup>
     <Compile Include="DataAccess\StatementLoader.cs" />
     <Compile Include="DataAccess\StatementMt4Parser.cs" />
+    <Compile Include="Interfaces\IStatementService.cs" />
     <Compile Include="Models\Statement.cs" />
     <Compile Include="Models\StatementFile.cs" />
     <Compile Include="Models\StatementInfo.cs" />
     <Compile Include="Models\StatementStats.cs" />
     <Compile Include="Models\StatementSummary.cs" />
     <Compile Include="Models\Transaction.cs" />
+    <Compile Include="Sevices\StatementService.cs" />
     <Compile Include="StatementModuleModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

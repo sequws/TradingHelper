@@ -1,6 +1,7 @@
 ﻿using Core.Interfaces;
 using Prism.Commands;
 using Prism.Mvvm;
+using StatementModule.Interfaces;
 using StatementModule.Models;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ namespace StatementModule.ViewModels
     {
         private string _message;
         private readonly ILoader<StatementFile> _statementLoader;
+        private readonly IStatementService _statementService;
 
         public string Message
         {
@@ -21,12 +23,12 @@ namespace StatementModule.ViewModels
             set { SetProperty(ref _message, value); }
         }
 
-        public ViewAViewModel(ILoader<StatementFile> statementLoader)
+        public ViewAViewModel(IStatementService statemenrService)
         {
             Message = "View A from Module";
-            _statementLoader = statementLoader;
+            _statementService = statemenrService;
 
-            var files =_statementLoader.LoadData();
+            var files = _statementService.GetAllStatements();
         }
     }
 }
