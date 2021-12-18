@@ -16,14 +16,19 @@ namespace StatementModule.Sevices
             _parser = parser;
         }
 
-        public IEnumerable<Statement> GetAllStatements()
+        public List<Statement> GetAllStatements()
         {
-            IEnumerable<Statement> loadedStatements = new List<Statement>();
-            var files = _loader.GetFiles();
+            List<Statement> loadedStatements = new List<Statement>();
+            var statementFiles = _loader.LoadData();
 
-            foreach( var file in files)
+            foreach( var statement in statementFiles)
             {
-
+                if(_parser.TryParse(statement.Text))
+                {
+                    var parsed = _parser.GetData();
+                    parsed.Name = statement.Name;
+                    loadedStatements.Add(parsed);
+                }
 
             }
 

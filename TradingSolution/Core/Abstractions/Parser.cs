@@ -6,7 +6,7 @@ namespace Core.Abstractions
 {
     public abstract class Parser : ErrorCollector
     {
-        public bool TryParse(List<string> input, Action failAction)
+        public bool TryParse(string input, Action failAction)
         {
             if (!TryParse(input))
             {
@@ -16,6 +16,6 @@ namespace Core.Abstractions
             return true;
         }
 
-        public abstract bool TryParse(List<string> input);
+        public abstract bool TryParse(string input);
     }
 }

@@ -16,13 +16,13 @@ namespace StatementModule.DataAccess
 
         public Statement GetData()
         {
-            throw new NotImplementedException();
+            return ParsedStatement;
         }
 
-        public override bool TryParse(List<string> input)
+        public override bool TryParse(string input)
         {
             var doc = new HtmlDocument();
-            doc.LoadHtml(string.Join("\n", input));
+            doc.LoadHtml(input);
 
             var rows = doc.DocumentNode.SelectNodes("//table//tr");
             foreach (var row in rows)

@@ -9,6 +9,6 @@ namespace StatementModule.Interfaces
 {
     public interface IStatementService
     {
-        IEnumerable<Statement> GetAllStatements();
+        List<Statement> GetAllStatements();
     }
 }

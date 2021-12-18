@@ -8,6 +8,8 @@ namespace StatementModule.Models
 {
     public class Statement
     {
+        public string Name { get; set; }
+
         public StatementInfo Info { get; set; }
         public StatementStats Stats { get; set; }
         public StatementSummary Summary { get; set; }

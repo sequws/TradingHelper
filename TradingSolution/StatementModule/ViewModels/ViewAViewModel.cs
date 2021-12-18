@@ -14,7 +14,6 @@ namespace StatementModule.ViewModels
     public class ViewAViewModel : BindableBase
     {
         private string _message;
-        private readonly ILoader<StatementFile> _statementLoader;
         private readonly IStatementService _statementService;
 
         public string Message
@@ -28,7 +27,7 @@ namespace StatementModule.ViewModels
             Message = "View A from Module";
             _statementService = statemenrService;
 
-            var files = _statementService.GetAllStatements();
+            var statements = _statementService.GetAllStatements();
         }
     }
 }
