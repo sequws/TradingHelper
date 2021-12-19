@@ -18,9 +18,9 @@ namespace StatementModule.Views
     /// <summary>
     /// Interaction logic for ViewA.xaml
     /// </summary>
-    public partial class ViewA : UserControl
+    public partial class StatementList : UserControl
     {
-        public ViewA()
+        public StatementList()
         {
             InitializeComponent();
         }

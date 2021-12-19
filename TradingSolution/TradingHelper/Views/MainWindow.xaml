@@ -31,7 +31,7 @@
             <Button Content="DemoView" Margin="2" FontSize="12" mahc:ControlsHelper.ContentCharacterCasing="Normal"
                      Command="{Binding NavigateCommand}" CommandParameter="Demo1View"></Button>
             <Button Content="ViewA module" Margin="2" FontSize="12" mahc:ControlsHelper.ContentCharacterCasing="Normal"
-                     Command="{Binding NavigateCommand}" CommandParameter="ViewA"></Button>
+                     Command="{Binding NavigateCommand}" CommandParameter="StatementList"></Button>
         </StackPanel>
         <ContentControl prism:RegionManager.RegionName="ContentRegion"/>
     </DockPanel>

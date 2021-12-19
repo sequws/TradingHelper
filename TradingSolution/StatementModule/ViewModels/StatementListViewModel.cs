@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace StatementModule.ViewModels
 {
-    public class ViewAViewModel : BindableBase
+    public class StatementListViewModel : BindableBase
     {
         private string _message;
         private readonly IStatementService _statementService;
@@ -22,7 +22,7 @@ namespace StatementModule.ViewModels
             set { SetProperty(ref _message, value); }
         }
 
-        public ViewAViewModel(IStatementService statemenrService)
+        public StatementListViewModel(IStatementService statemenrService)
         {
             Message = "View A from Module";
             _statementService = statemenrService;
