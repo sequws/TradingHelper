@@ -17,5 +17,10 @@ namespace StatementModule.Models
         public List<Transaction> ClosedTrades { get; set; } = new List<Transaction>();
         public List<Transaction> OpenTrades { get; set; } = new List<Transaction>();
         public List<Transaction> WorkingTrades { get; set; } = new List<Transaction>();
+
+        public override string ToString()
+        {
+            return $"{Name}, transactions: {ClosedTrades.Count}";
+        }
     }
 }

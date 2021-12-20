@@ -5,6 +5,7 @@ using StatementModule.Interfaces;
 using StatementModule.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,8 @@ namespace StatementModule.ViewModels
         private string _message;
         private readonly IStatementService _statementService;
 
+        public ObservableCollection<Statement> ListOfStatements { get; set; }
+
         public string Message
         {
             get { return _message; }
@@ -24,10 +27,10 @@ namespace StatementModule.ViewModels
 
         public StatementListViewModel(IStatementService statemenrService)
         {
-            Message = "View A from Module";
+            Message = "Statement list:";
             _statementService = statemenrService;
 
-            var statements = _statementService.GetAllStatements();
+            ListOfStatements = new ObservableCollection<Statement>(_statementService.GetAllStatements());
         }
     }
 }
