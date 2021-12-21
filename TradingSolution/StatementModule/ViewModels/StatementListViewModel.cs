@@ -1,6 +1,7 @@
 ﻿using Core.Interfaces;
 using Prism.Commands;
 using Prism.Mvvm;
+using Prism.Regions;
 using StatementModule.Interfaces;
 using StatementModule.Models;
 using System;
@@ -12,10 +13,11 @@ using System.Threading.Tasks;
 
 namespace StatementModule.ViewModels
 {
-    public class StatementListViewModel : BindableBase
+    public class StatementListViewModel : BindableBase, INavigationAware
     {
         private string _message;
         private readonly IStatementService _statementService;
+        private readonly IRegionManager regionManager;
 
         public ObservableCollection<Statement> ListOfStatements { get; set; }
 
@@ -25,12 +27,36 @@ namespace StatementModule.ViewModels
             set { SetProperty(ref _message, value); }
         }
 
-        public StatementListViewModel(IStatementService statemenrService)
+        public StatementListViewModel(IStatementService statemenrService, IRegionManager regionManager)
         {
             Message = "Statement list:";
             _statementService = statemenrService;
-
+            this.regionManager = regionManager;
             ListOfStatements = new ObservableCollection<Statement>(_statementService.GetAllStatements());
+        }
+
+        public void OnNavigatedTo(NavigationContext navigationContext)
+        {
+            //navigationService = navigationContext.NavigationService;
+        }
+
+        public bool IsNavigationTarget(NavigationContext navigationContext)
+        {
+            return true;
+        }
+
+        public void OnNavigatedFrom(NavigationContext navigationContext)
+        {
+            
+        }
+
+        private DelegateCommand _openStatementViewComman;
+        public DelegateCommand OpenStatementViewComman =>
+            _openStatementViewComman ?? (_openStatementViewComman = new DelegateCommand(ExecuteCommandName));
+
+        void ExecuteCommandName()
+        {
+            regionManager.RequestNavigate("ContentRegion", new Uri("StatementView", UriKind.Relative));
         }
     }
 }

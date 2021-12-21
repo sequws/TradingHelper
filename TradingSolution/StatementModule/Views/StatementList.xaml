@@ -12,9 +12,10 @@
     <DockPanel>
         <StackPanel Orientation="Horizontal" Height="30" DockPanel.Dock="Top">
             <TextBlock Text="{Binding Message}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <Button Content="Statement"  Command="{Binding OpenStatementViewComman}" ></Button>
         </StackPanel>
         <Grid>
-            <ListView ItemsSource="{Binding ListOfStatements}"></ListView>
+            <ListView ItemsSource="{Binding ListOfStatements}" ></ListView>
         </Grid>        
     </DockPanel>
 </UserControl>

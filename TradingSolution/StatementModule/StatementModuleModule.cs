@@ -16,6 +16,7 @@ namespace StatementModule
         {
             var regionManager = containerProvider.Resolve<IRegionManager>();
             regionManager.RegisterViewWithRegion("ContentRegion", typeof(StatementList));
+            regionManager.RegisterViewWithRegion("ContentRegion", typeof(StatementView));
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)

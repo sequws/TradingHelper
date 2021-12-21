@@ -74,6 +74,10 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="ViewModels\StatementListViewModel.cs" />
+    <Compile Include="ViewModels\StatementViewModel.cs" />
+    <Compile Include="Views\StatementView.xaml.cs">
+      <DependentUpon>StatementView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\StatementList.xaml.cs">
       <DependentUpon>StatementList.xaml</DependentUpon>
     </Compile>
@@ -94,6 +98,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\StatementView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\StatementList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
