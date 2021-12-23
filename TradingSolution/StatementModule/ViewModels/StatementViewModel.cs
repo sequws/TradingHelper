@@ -22,12 +22,12 @@ namespace StatementModule.ViewModels
 
         private bool CanGoBack()
         {
-            return _regionManager.Regions["ContentRegion"].NavigationService.Journal.CanGoBack;/*or CanGoForward */
+            return true;
         }
 
         private void GoBack()
         {
-            _regionManager.Regions["ContentRegion"].NavigationService.Journal.GoBack();//
+            _regionManager.RequestNavigate("ContentRegion", new Uri("StatementList", UriKind.Relative));
         }
     }
 }
