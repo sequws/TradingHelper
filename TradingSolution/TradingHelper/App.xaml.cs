@@ -37,6 +37,7 @@ namespace TradingHelper
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
         {
             moduleCatalog.AddModule<StatementModule.StatementModuleModule>();
+            moduleCatalog.AddModule<JournalModule.JournalModuleModule>();
         }
     }
 }
