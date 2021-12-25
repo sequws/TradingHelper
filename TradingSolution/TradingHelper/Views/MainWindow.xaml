@@ -34,8 +34,8 @@
                      Command="{Binding NavigateCommand}" CommandParameter="StatementList"></Button>
             <Button Content="Statement" Margin="2" FontSize="12" mahc:ControlsHelper.ContentCharacterCasing="Normal"
                      Command="{Binding NavigateCommand}" CommandParameter="StatementView"></Button>
-            <Button Content="Journal" Margin="2" FontSize="12" mahc:ControlsHelper.ContentCharacterCasing="Normal"
-                     Command="{Binding NavigateCommand}" CommandParameter="ViewA"></Button>
+            <Button Content="Journal Main" Margin="2" FontSize="12" mahc:ControlsHelper.ContentCharacterCasing="Normal"
+                     Command="{Binding NavigateCommand}" CommandParameter="MainJournalView"></Button>
         </StackPanel>
         <ContentControl prism:RegionManager.RegionName="ContentRegion"/>
     </DockPanel>
