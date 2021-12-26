@@ -13,7 +13,7 @@ namespace TradingHelper.Views
         {
             InitializeComponent();
 
-            //regionManager.RegisterViewWithRegion("ContentRegion", typeof(DemoView1));
+            regionManager.RegisterViewWithRegion("ContentRegion", typeof(DemoView1));
         }
     }
 }

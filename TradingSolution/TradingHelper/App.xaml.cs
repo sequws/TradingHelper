@@ -23,13 +23,11 @@ namespace TradingHelper
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<DemoView1>("Demo1View"); // register in MainWindow with region
-
         }
 
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-
             // Set the application theme to Dark.Green
             //ThemeManager.Current.ChangeTheme(this, "Dark.Green");
         }

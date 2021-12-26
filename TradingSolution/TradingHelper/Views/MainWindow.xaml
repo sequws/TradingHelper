@@ -30,10 +30,12 @@
         <StackPanel DockPanel.Dock="Left" Width="140" Background="#EFEFEF">
             <Button Content="DemoView" Margin="2" FontSize="12" mahc:ControlsHelper.ContentCharacterCasing="Normal"
                      Command="{Binding NavigateCommand}" CommandParameter="Demo1View"></Button>
-            <Button Content="Statements list" Margin="2" FontSize="12" mahc:ControlsHelper.ContentCharacterCasing="Normal"
+            <!--<Button Content="Statements list" Margin="2" FontSize="12" mahc:ControlsHelper.ContentCharacterCasing="Normal"
                      Command="{Binding NavigateCommand}" CommandParameter="StatementList"></Button>
             <Button Content="Statement" Margin="2" FontSize="12" mahc:ControlsHelper.ContentCharacterCasing="Normal"
-                     Command="{Binding NavigateCommand}" CommandParameter="StatementView"></Button>
+                     Command="{Binding NavigateCommand}" CommandParameter="StatementView"></Button>-->
+            <Button Content="Statement Main" Margin="2" FontSize="12" mahc:ControlsHelper.ContentCharacterCasing="Normal"
+                     Command="{Binding NavigateCommand}" CommandParameter="MainStatementView"></Button>
             <Button Content="Journal Main" Margin="2" FontSize="12" mahc:ControlsHelper.ContentCharacterCasing="Normal"
                      Command="{Binding NavigateCommand}" CommandParameter="MainJournalView"></Button>
         </StackPanel>

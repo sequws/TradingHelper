@@ -73,8 +73,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="ViewModels\MainStatementViewModel.cs" />
     <Compile Include="ViewModels\StatementListViewModel.cs" />
     <Compile Include="ViewModels\StatementViewModel.cs" />
+    <Compile Include="Views\MainStatementView.xaml.cs">
+      <DependentUpon>MainStatementView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\StatementView.xaml.cs">
       <DependentUpon>StatementView.xaml</DependentUpon>
     </Compile>
@@ -98,6 +102,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Views\MainStatementView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\StatementView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
