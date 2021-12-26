@@ -5,13 +5,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace StatementModule.ViewModels
+namespace JournalModule.ViewModels
 {
-    public class MainStatementViewModel : BindableBase
+    public class MainViewModel : BindableBase
     {
         private readonly IRegionManager _regionManager;
 
-        public MainStatementViewModel(IRegionManager regionManager)
+        public MainViewModel(IRegionManager regionManager)
         {
             _regionManager = regionManager;
             NavigateCommand = new DelegateCommand<string>(Navigate);
@@ -21,7 +21,7 @@ namespace StatementModule.ViewModels
 
         private void Navigate(string uri)
         {
-            _regionManager.RequestNavigate("StatementContentRegion", uri);
+            _regionManager.RequestNavigate("JournalContentRegion", uri);
         }
 
         public DelegateCommand<string> NavigateCommand { get; set; }

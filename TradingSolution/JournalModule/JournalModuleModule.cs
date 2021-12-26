@@ -13,13 +13,14 @@ namespace JournalModule
 
             regionManager.RegisterViewWithRegion("JournalContentRegion", typeof(ViewA));
             //regionManager.RegisterViewWithRegion("JournalContentRegion", typeof(ViewB));
-            regionManager.RegisterViewWithRegion("ContentRegion", typeof(MainJournalView));
+            regionManager.RegisterViewWithRegion("ContentRegion", typeof(MainView));
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<ViewA>("ViewA");
             containerRegistry.RegisterForNavigation<ViewB>("ViewB");
+            containerRegistry.RegisterForNavigation<MainView>("MainViewJournal");
         }
     }
 }

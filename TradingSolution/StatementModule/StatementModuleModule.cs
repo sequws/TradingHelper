@@ -15,7 +15,7 @@ namespace StatementModule
         public void OnInitialized(IContainerProvider containerProvider)
         {
             var regionManager = containerProvider.Resolve<IRegionManager>();
-            regionManager.RegisterViewWithRegion("ContentRegion", typeof(MainStatementView));
+            regionManager.RegisterViewWithRegion("ContentRegion", typeof(MainView));
             regionManager.RegisterViewWithRegion("StatementContentRegion", typeof(StatementList));
             //regionManager.RegisterViewWithRegion("StatementContentRegion", typeof(StatementView));
         }
@@ -26,6 +26,7 @@ namespace StatementModule
             containerRegistry.RegisterSingleton<IParser<Statement>, StatementMt4Parser>();
             containerRegistry.RegisterSingleton<IStatementService, StatementService>();
 
+            containerRegistry.RegisterForNavigation<MainView>("MainViewStatement");
             containerRegistry.RegisterForNavigation<StatementList>("StatementList");
             containerRegistry.RegisterForNavigation<StatementView>("StatementView");
         }
