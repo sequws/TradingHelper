@@ -49,8 +49,10 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\Enums.cs" />
     <Compile Include="JournalModuleModule.cs" />
     <Compile Include="Models\Entry.cs" />
+    <Compile Include="Models\Rule.cs" />
     <Compile Include="Models\Strategy.cs" />
     <Compile Include="Models\TradingDay.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
