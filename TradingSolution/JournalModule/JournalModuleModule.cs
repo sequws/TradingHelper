@@ -20,6 +20,7 @@ namespace JournalModule
         {
             containerRegistry.RegisterForNavigation<ViewA>("ViewA");
             containerRegistry.RegisterForNavigation<ViewB>("ViewB");
+            containerRegistry.RegisterForNavigation<Journal>("Journal");
             containerRegistry.RegisterForNavigation<MainView>("MainViewJournal");
         }
     }
