@@ -22,6 +22,7 @@ namespace JournalModule
             containerRegistry.RegisterForNavigation<ViewB>("ViewB");
             containerRegistry.RegisterForNavigation<Journal>("Journal");
             containerRegistry.RegisterForNavigation<MainView>("MainViewJournal");
+            containerRegistry.RegisterForNavigation<NewTransaction>("NewTransaction");
         }
     }
 }
