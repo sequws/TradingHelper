@@ -14,10 +14,6 @@
                      Command="{Binding NavigateCommand}" CommandParameter="Journal"></Button>
             <Button Content="Add new transaction" Margin="2" FontSize="12"
                      Command="{Binding NavigateCommand}" CommandParameter="NewTransaction"></Button>
-            <Button Content="View A" Margin="2" FontSize="12"
-                     Command="{Binding NavigateCommand}" CommandParameter="ViewA"></Button>
-            <Button Content="View B" Margin="2" FontSize="12"
-                     Command="{Binding NavigateCommand}" CommandParameter="ViewB"></Button>
         </StackPanel>
         <ContentControl prism:RegionManager.RegionName="JournalContentRegion"/>
     </DockPanel>
