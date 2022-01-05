@@ -38,6 +38,8 @@
                      Command="{Binding NavigateCommand}" CommandParameter="MainViewStatement"></Button>
             <Button Content="Journal Main" Margin="2" FontSize="12" mahc:ControlsHelper.ContentCharacterCasing="Normal"
                      Command="{Binding NavigateCommand}" CommandParameter="MainViewJournal"></Button>
+            <Button Content="Analysis Main" Margin="2" FontSize="12" mahc:ControlsHelper.ContentCharacterCasing="Normal"
+                     Command="{Binding NavigateCommand}" CommandParameter="MainViewAnalysis"></Button>
         </StackPanel>
         <ContentControl prism:RegionManager.RegionName="ContentRegion"/>
     </DockPanel>

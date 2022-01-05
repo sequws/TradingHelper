@@ -36,6 +36,7 @@ namespace TradingHelper
         {
             moduleCatalog.AddModule<StatementModule.StatementModuleModule>();
             moduleCatalog.AddModule<JournalModule.JournalModuleModule>();
+            moduleCatalog.AddModule<AnalysisModule.AnalysisModuleModule>();
         }
     }
 }
