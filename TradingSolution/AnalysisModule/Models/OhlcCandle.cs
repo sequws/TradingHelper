@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace AnalysisModule.Models
 {
-    public class CandleOhlc
+    public class OhlcCandle
     {
         double Open { get; set; }
         double High { get; set; }
         double Low { get; set; }
         double Close { get; set; }
-        DateTime dateTime { get; set; }
+        DateTime Date { get; set; }
+        TimeSpan Time { get; set; }
+        int Volume { get; set; }
     }
 }

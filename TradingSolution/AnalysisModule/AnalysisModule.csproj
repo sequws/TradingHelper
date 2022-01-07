@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="AnalysisModuleModule.cs" />
     <Compile Include="Models\OhlcCandle.cs" />
+    <Compile Include="Models\OhlcMt4Data.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -82,7 +83,9 @@
     </None>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="DataAccess\" />
+  </ItemGroup>
   <ItemGroup>
     <Page Include="Views\MainView.xaml">
       <SubType>Designer</SubType>
