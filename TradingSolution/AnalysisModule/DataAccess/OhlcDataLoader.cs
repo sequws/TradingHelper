@@ -17,18 +17,6 @@ namespace AnalysisModule.DataAccess
 
         }
 
-        public List<string> GetFiles()
-        {
-            if (!Directory.Exists(DataFolder))
-            {
-                return new List<string>();
-            }
-
-            string[] files = Directory.GetFiles(DataFolder, extension);
-
-            return files.ToList();
-        }
-
         public IEnumerable<OhlcCandleData> LoadData()
         {
             throw new NotImplementedException();

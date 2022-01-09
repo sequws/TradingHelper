@@ -17,18 +17,6 @@ namespace StatementModule.DataAccess
 
         }
 
-        public List<string> GetFiles()
-        {
-            if (!Directory.Exists(DataFolder))
-            {
-                return new List<string>();
-            }
-
-            string[] files = Directory.GetFiles(DataFolder, extension);
-
-            return files.ToList();
-        }
-
         public IEnumerable<StatementFile> LoadData()
         {
             var res = new List<StatementFile>();

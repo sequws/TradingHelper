@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace Core.Abstractions
 {
@@ -14,13 +16,7 @@ namespace Core.Abstractions
         protected string loadDirectory;
         protected string extension = "*.*";
 
-        public string DataFolder
-        {
-            get
-            {
-                return dataPath;
-            }
-        }
+        public string DataFolder => dataPath;
 
         public Loader() : this(string.Empty, "*.txt")
         {
@@ -51,6 +47,18 @@ namespace Core.Abstractions
             {
                 Directory.CreateDirectory(DataFolder);
             }
+        }
+
+        public List<string> GetFiles()
+        {
+            if (!Directory.Exists(DataFolder))
+            {
+                return new List<string>();
+            }
+
+            string[] files = Directory.GetFiles(DataFolder, extension);
+
+            return files.ToList();
         }
     }
 }
