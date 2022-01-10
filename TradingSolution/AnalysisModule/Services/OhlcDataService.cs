@@ -11,11 +11,11 @@ namespace AnalysisModule.Services
 {
     public class OhlcDataService : IOhlcDataService
     {
-        private readonly ILoader<OhlcCandleData> _loader;
+        private readonly ILoader<OhlcFile> _loader;
         private readonly IParser<OhlcCandle> _parser;
 
         public OhlcDataService(
-            ILoader<OhlcCandleData> loader,
+            ILoader<OhlcFile> loader,
             IParser<OhlcCandle> parser)
         {
             _loader = loader;
@@ -25,7 +25,20 @@ namespace AnalysisModule.Services
 
         public List<OhlcCandleData> GetAllCandleData()
         {
-            throw new NotImplementedException();
+            List<OhlcCandleData> loadedOhlcData = new List<OhlcCandleData>();
+
+            var ohlcFiles = _loader.LoadData();
+
+            foreach (var data in ohlcFiles)
+            {
+                if (_parser.TryParse(string.Join("\n", data.Lines)))
+                {
+                    //var parsed = _parser.GetData();
+                }
+
+            }
+
+            return loadedOhlcData;
         }
     }
 }

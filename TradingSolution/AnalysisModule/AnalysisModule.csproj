@@ -55,6 +55,7 @@
     <Compile Include="Interfaces\IOhlcDataService.cs" />
     <Compile Include="Models\OhlcCandle.cs" />
     <Compile Include="Models\OhlcCandleData.cs" />
+    <Compile Include="Models\OhlcFile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

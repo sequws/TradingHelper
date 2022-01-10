@@ -10,16 +10,39 @@ using System.Threading.Tasks;
 
 namespace AnalysisModule.DataAccess
 {
-    public class OhlcDataLoader : Loader, ILoader<OhlcCandleData>
+    public class OhlcDataLoader : Loader, ILoader<OhlcFile>
     {
         public OhlcDataLoader() : base("ohlcdata", "*.csv")
         {
 
         }
 
-        public IEnumerable<OhlcCandleData> LoadData()
+        public IEnumerable<OhlcFile> LoadData()
         {
-            throw new NotImplementedException();
+            var res = new List<OhlcFile>();
+
+            foreach(var file in GetFiles())
+            {
+                res.Add(new OhlcFile
+                {
+                    FileName = file,
+                    Lines = File.ReadAllLines(file).ToList(),
+                    Name = GetNameFromPath(file)
+                });
+            }
+
+            return res;
+        }
+
+        private string GetNameFromPath(string path)
+        {
+            string name = "NoName";
+
+            var parts = path.Split(new char[] { '/', '\\' }, StringSplitOptions.RemoveEmptyEntries);
+            name = parts[parts.Length - 1];
+            name = Path.GetFileNameWithoutExtension(name);
+
+            return name;
         }
     }
 }

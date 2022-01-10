@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace AnalysisModule.DataAccess
 {
-    public class OhlcDataPaser : Parser, IParser<OhlcCandle>
+    public class OhlcDataPaser : Parser, IParser<OhlcCandleData>
     {
-        private OhlcCandle _candle = new OhlcCandle();
+        private OhlcCandleData _candle = new OhlcCandleData();
         
-        public OhlcCandle GetData()
+        public OhlcCandleData GetData()
         {
             return _candle;
         }
