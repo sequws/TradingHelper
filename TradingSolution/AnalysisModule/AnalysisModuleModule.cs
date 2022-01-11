@@ -1,4 +1,9 @@
-﻿using AnalysisModule.Views;
+﻿using AnalysisModule.DataAccess;
+using AnalysisModule.Interfaces;
+using AnalysisModule.Models;
+using AnalysisModule.Services;
+using AnalysisModule.Views;
+using Core.Interfaces;
 using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Regions;
@@ -15,7 +20,13 @@ namespace AnalysisModule
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.RegisterSingleton<ILoader<OhlcFile>, OhlcDataLoader>();
+            containerRegistry.RegisterSingleton<IParser<OhlcCandleData>, OhlcDataPaser>();
+            containerRegistry.RegisterSingleton<IOhlcDataService, OhlcDataService>();
+
             containerRegistry.RegisterForNavigation<MainView>("MainViewAnalysis");
+            //containerRegistry.RegisterForNavigation<ViewA>("ViewA");
+            
         }
     }
 }

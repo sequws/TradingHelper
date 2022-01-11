@@ -12,11 +12,11 @@ namespace AnalysisModule.Services
     public class OhlcDataService : IOhlcDataService
     {
         private readonly ILoader<OhlcFile> _loader;
-        private readonly IParser<OhlcCandle> _parser;
+        private readonly IParser<OhlcCandleData> _parser;
 
         public OhlcDataService(
             ILoader<OhlcFile> loader,
-            IParser<OhlcCandle> parser)
+            IParser<OhlcCandleData> parser)
         {
             _loader = loader;
             _parser = parser;

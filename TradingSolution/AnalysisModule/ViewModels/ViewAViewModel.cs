@@ -1,4 +1,7 @@
-﻿using Prism.Commands;
+﻿using AnalysisModule.Interfaces;
+using AnalysisModule.Models;
+using Core.Interfaces;
+using Prism.Commands;
 using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
@@ -17,9 +20,14 @@ namespace AnalysisModule.ViewModels
             set { SetProperty(ref _message, value); }
         }
 
-        public ViewAViewModel()
+        readonly IOhlcDataService _service;
+
+        public ViewAViewModel( IOhlcDataService service)
         {
             Message = "View A from Analysis Module";
+
+            _service = service;
+            var data = _service.GetAllCandleData();
         }
     }
 }

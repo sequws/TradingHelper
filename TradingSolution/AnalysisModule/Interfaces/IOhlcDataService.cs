@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AnalysisModule.Interfaces
 {
-    interface IOhlcDataService
+    public interface IOhlcDataService
     {
         List<OhlcCandleData> GetAllCandleData();
     }
