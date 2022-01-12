@@ -9,6 +9,11 @@ namespace AnalysisModule.Models
     public class OhlcCandleData
     {
         public string Name { get; set; }
-        IList<OhlcCandle> Candles { get; set; }
+        public IList<OhlcCandle> Candles { get; set; }
+
+        public OhlcCandleData()
+        {
+            Candles = new List<OhlcCandle>();
+        }
     }
 }

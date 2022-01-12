@@ -22,8 +22,37 @@ namespace AnalysisModule.DataAccess
         public override bool TryParse(string input)
         {
             if (string.IsNullOrEmpty(input)) return false;
+            var lines = input.Split(new char[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            _candle = new OhlcCandleData();
 
-            // todo
+            // get ohlc data with time and volume
+            foreach (var line in lines)
+            {
+                try
+                {
+                    var data = line.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+
+                    if (data.Length == 7)
+                    {
+                        var timeData = data[1].Split(':');
+                        OhlcCandle candle = new OhlcCandle
+                        {
+                            Date = DateTime.Parse(data[0]),
+                            Time = new TimeSpan(int.Parse(timeData[0]), int.Parse(timeData[1]), 0),
+                            Open = double.Parse(data[2].Replace('.',',')),
+                            High = double.Parse(data[3].Replace('.', ',')),
+                            Low = double.Parse(data[4].Replace('.', ',')),
+                            Close = double.Parse(data[5].Replace('.', ',')),
+                            Volume = int.Parse(data[6])
+                        };
+                        _candle.Candles.Add(candle);
+                    }
+                }
+                catch(Exception e)
+                {
+                    AddError($"Error during parsing: {line} \n{e.Message}");
+                }
+            }
 
             return true;
         }

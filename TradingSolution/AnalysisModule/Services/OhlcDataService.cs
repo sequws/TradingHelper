@@ -26,16 +26,17 @@ namespace AnalysisModule.Services
         public List<OhlcCandleData> GetAllCandleData()
         {
             List<OhlcCandleData> loadedOhlcData = new List<OhlcCandleData>();
-
             var ohlcFiles = _loader.LoadData();
 
             foreach (var data in ohlcFiles)
             {
                 if (_parser.TryParse(string.Join("\n", data.Lines)))
                 {
-                    //var parsed = _parser.GetData();
-                }
+                    OhlcCandleData parsed = _parser.GetData();
+                    parsed.Name = data.Name;
 
+                    loadedOhlcData.Add(parsed);
+                }
             }
 
             return loadedOhlcData;
