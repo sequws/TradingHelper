@@ -18,9 +18,9 @@ namespace AnalysisModule.Views
     /// <summary>
     /// Interaction logic for ViewA.xaml
     /// </summary>
-    public partial class ViewA : UserControl
+    public partial class Report : UserControl
     {
-        public ViewA()
+        public Report()
         {
             InitializeComponent();
         }

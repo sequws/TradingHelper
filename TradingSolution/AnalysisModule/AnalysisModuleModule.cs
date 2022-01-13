@@ -15,7 +15,7 @@ namespace AnalysisModule
         public void OnInitialized(IContainerProvider containerProvider)
         {
             var regionManager = containerProvider.Resolve<IRegionManager>();
-            regionManager.RegisterViewWithRegion("AnalysisContentRegion", typeof(ViewA));
+            regionManager.RegisterViewWithRegion("AnalysisContentRegion", typeof(Report));
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
@@ -25,8 +25,7 @@ namespace AnalysisModule
             containerRegistry.RegisterSingleton<IOhlcDataService, OhlcDataService>();
 
             containerRegistry.RegisterForNavigation<MainView>("MainViewAnalysis");
-            //containerRegistry.RegisterForNavigation<ViewA>("ViewA");
-            
+            //containerRegistry.RegisterForNavigation<Report>("Report");            
         }
     }
 }

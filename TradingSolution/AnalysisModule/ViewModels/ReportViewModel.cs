@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace AnalysisModule.ViewModels
 {
-    public class ViewAViewModel : BindableBase
+    public class ReportViewModel : BindableBase
     {
         private string _message;
         public string Message
@@ -22,7 +22,7 @@ namespace AnalysisModule.ViewModels
 
         readonly IOhlcDataService _service;
 
-        public ViewAViewModel( IOhlcDataService service)
+        public ReportViewModel( IOhlcDataService service)
         {
             Message = "View A from Analysis Module";
 
