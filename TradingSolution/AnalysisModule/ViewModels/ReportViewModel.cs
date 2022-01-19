@@ -24,7 +24,7 @@ namespace AnalysisModule.ViewModels
 
         public ReportViewModel( IOhlcDataService service)
         {
-            Message = "View A from Analysis Module";
+            Message = "Report";
 
             _service = service;
             var data = _service.GetAllCandleData();
