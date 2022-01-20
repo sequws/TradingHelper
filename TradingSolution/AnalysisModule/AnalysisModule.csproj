@@ -52,7 +52,9 @@
     <Compile Include="AnalysisModuleModule.cs" />
     <Compile Include="DataAccess\OhlcDataLoader.cs" />
     <Compile Include="DataAccess\OhlcDataPaser.cs" />
+    <Compile Include="Models\Candle.cs" />
     <Compile Include="Interfaces\IOhlcDataService.cs" />
+    <Compile Include="Models\CandleSources.cs" />
     <Compile Include="Models\OhlcCandle.cs" />
     <Compile Include="Models\OhlcCandleData.cs" />
     <Compile Include="Models\OhlcFile.cs" />

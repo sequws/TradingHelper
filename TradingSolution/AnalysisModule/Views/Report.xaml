@@ -4,13 +4,27 @@
              xmlns:local="clr-namespace:AnalysisModule.Views"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:fc="clr-namespace:FancyCandles;assembly=FancyCandles"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300"
              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True" >
-    <Grid>
-        <TextBlock Text="{Binding Message}"
+    <DockPanel>
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+            <TextBlock Text="{Binding Message}"
                        HorizontalAlignment="Center"
                        VerticalAlignment="Center" />
-    </Grid>
+        </StackPanel>
+        <StackPanel DockPanel.Dock="Right" Width="40">
+            <Slider Orientation="Vertical" Height="267" x:Name="ChartSlider" />
+        </StackPanel>
+        <Grid>
+            <fc:CandleChart CandlesSource="{Binding Candles}" 
+                            LegendText="{Binding ChartName}" 
+                            LegendForeground="Silver"   
+                            PriceChartTopMargin="{Binding ElementName=ChartSlider, Path=Value}"
+                            PriceChartBottomMargin="{Binding ElementName=ChartSlider, Path=Value}"
+                            />
+        </Grid>
+    </DockPanel>
 </UserControl>
