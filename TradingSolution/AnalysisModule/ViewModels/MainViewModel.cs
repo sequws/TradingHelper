@@ -19,7 +19,7 @@ namespace AnalysisModule.ViewModels
 
         private void Navigate(string uri)
         {
-            _regionManager.RequestNavigate("ContentRegion", uri);
+            _regionManager.RequestNavigate("AnalysisContentRegion", uri);
         }
 
         #region commands

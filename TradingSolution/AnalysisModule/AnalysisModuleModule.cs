@@ -25,7 +25,7 @@ namespace AnalysisModule
             containerRegistry.RegisterSingleton<IOhlcDataService, OhlcDataService>();
 
             containerRegistry.RegisterForNavigation<MainView>("MainViewAnalysis");
-            containerRegistry.RegisterForNavigation<Report>("Report");            
+            containerRegistry.RegisterForNavigation<Report>("Report");
         }
     }
 }
