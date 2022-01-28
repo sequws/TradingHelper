@@ -20,6 +20,7 @@ namespace StatementModule.ViewModels
         private readonly IRegionManager regionManager;
 
         public ObservableCollection<Statement> ListOfStatements { get; set; }
+        public Statement SelectedStatement { get; set; }
 
         public string Message
         {
@@ -52,11 +53,17 @@ namespace StatementModule.ViewModels
 
         private DelegateCommand _openStatementViewComman;
         public DelegateCommand OpenStatementViewComman =>
-            _openStatementViewComman ?? (_openStatementViewComman = new DelegateCommand(ExecuteCommandName));
+            _openStatementViewComman ?? (_openStatementViewComman = new DelegateCommand(ExecuteOpenStatementCommand));
 
-        void ExecuteCommandName()
+        void ExecuteOpenStatementCommand()
         {
-            regionManager.RequestNavigate("ContentRegion", new Uri("StatementView", UriKind.Relative));
+            NavigationParameters navParams = new NavigationParameters();
+            if (SelectedStatement != null)
+            {
+                navParams.Add("statement", SelectedStatement);
+            }
+
+            regionManager.RequestNavigate("ContentRegion", new Uri("StatementView", UriKind.Relative), navParams);
         }
     }
 }

@@ -8,14 +8,26 @@
              d:DesignHeight="400" d:DesignWidth="600"
              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True" 
-             Background="AliceBlue">
+             Background="AliceBlue"
+             x:Name="MyWindow">
     <DockPanel>
         <StackPanel Orientation="Horizontal" Height="30" DockPanel.Dock="Top">
             <TextBlock Text="{Binding Message}" HorizontalAlignment="Center" VerticalAlignment="Center" />
             <Button Content="Statement"  Command="{Binding OpenStatementViewComman}" ></Button>
         </StackPanel>
         <Grid>
-            <ListView ItemsSource="{Binding ListOfStatements}" ></ListView>
+            <ListView ItemsSource="{Binding ListOfStatements}" SelectedItem="{Binding SelectedStatement}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="2">
+                            <Grid.InputBindings>
+                                <MouseBinding Gesture="LeftDoubleClick" Command="{Binding DataContext.OpenStatementViewComman, ElementName=MyWindow}"></MouseBinding>
+                            </Grid.InputBindings>
+                            <TextBlock Text="{Binding Name}"></TextBlock>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </Grid>        
     </DockPanel>
 </UserControl>
