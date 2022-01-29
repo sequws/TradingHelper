@@ -1,6 +1,7 @@
 ﻿using ControlzEx.Theming;
 using Prism.Ioc;
 using Prism.Modularity;
+using Prism.Regions;
 using System.Threading;
 using System.Windows;
 using TradingHelper.Views;
@@ -22,7 +23,10 @@ namespace TradingHelper
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.RegisterForNavigation<DemoView1>("Demo1View"); // register in MainWindow with region
+            var regionManager = Container.Resolve<IRegionManager>();
+            regionManager.RegisterViewWithRegion("ContentRegion", typeof(Hello));
+
+            //containerRegistry.RegisterForNavigation<Hello>("Hello");
         }
 
         protected override void OnStartup(StartupEventArgs e)

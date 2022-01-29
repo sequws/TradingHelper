@@ -28,8 +28,8 @@
             </Menu>
         </DockPanel>
         <StackPanel DockPanel.Dock="Left" Width="140" Background="#EFEFEF">
-            <Button Content="DemoView" Margin="2" FontSize="12" mahc:ControlsHelper.ContentCharacterCasing="Normal"
-                     Command="{Binding NavigateCommand}" CommandParameter="Demo1View"></Button>
+            <Button Content="Hello" Margin="2" FontSize="12" mahc:ControlsHelper.ContentCharacterCasing="Normal"
+                     Command="{Binding NavigateCommand}" CommandParameter="Hello"></Button>
             <!--<Button Content="Statements list" Margin="2" FontSize="12" mahc:ControlsHelper.ContentCharacterCasing="Normal"
                      Command="{Binding NavigateCommand}" CommandParameter="StatementList"></Button>
             <Button Content="Statement" Margin="2" FontSize="12" mahc:ControlsHelper.ContentCharacterCasing="Normal"

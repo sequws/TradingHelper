@@ -3,11 +3,11 @@
 namespace TradingHelper.Views
 {
     /// <summary>
-    /// Interaction logic for DemoView1
+    /// Interaction logic for Hello
     /// </summary>
-    public partial class DemoView1 : UserControl
+    public partial class Hello : UserControl
     {
-        public DemoView1()
+        public Hello()
         {
             InitializeComponent();
         }
